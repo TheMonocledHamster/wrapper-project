@@ -2,12 +2,12 @@
 CPP Wrappers
 
 To run jsoncpp code:  
-	g++ test.cpp -ljsoncpp   
-	./a.out
+1) g++ test.cpp -ljsoncpp   
+2) ./a.out
 
 To compile and create static libraries:  
-	g++ -c -o testlib.o testlib.cpp  
-	ar rcs testlib.a testlib.o  
-	g++ testlibcode.cpp testlib.a  
-	./a.out  
+1) g++ -c -o testlib.o testlib.cpp  
+2) ar rcs testlib.a testlib.o  
+3) g++ testlibcode.cpp testlib.a  
+4) ./a.out  
 a.out can run on any machine without having to install dependencies
