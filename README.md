@@ -10,4 +10,5 @@ To compile and create static libraries:
 2) ar rcs testlib.a testlib.o  
 3) g++ testlibcode.cpp testlib.a  
 4) ./a.out  
+
 a.out can run on any machine without having to install dependencies
