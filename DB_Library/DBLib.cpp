@@ -30,9 +30,11 @@ std::string DB::retrieve( std::string filepath, std::string key )
 	{
 		for(int i=0;i<root["RGB Values"].size();i++)
 		{
-			value = root["RGB Values"][i]["color"].asString();
-			if(value != ""&&value==key)
+			if(key == root["RGB Values"][i]["color"].asString())
+			{
+				value = root["RGB Values"][i]["value"].asString();
 				return value;
+			}
 		}
 		return "KeyNotFound";
 	}
