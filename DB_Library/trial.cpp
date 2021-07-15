@@ -15,7 +15,7 @@ int main()
     // Json::Value v;
     // r.parse(f,v);
     // cout<<v<<endl;
-    data.parse("SixBitColours.json");
+    //data.parse("SixBitColours.json");
     string out = data.retrieve("SixBitColours.json","red");
     if(out!="FileNotFound"){
         if(out!="ParseError"){

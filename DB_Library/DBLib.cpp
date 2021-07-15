@@ -26,12 +26,12 @@ std::string DB::retrieve( std::string filepath, std::string key )
 	std::ifstream fs(filepath);
 	if(!fs)
 		return "FileNotFound";
-	if(reader.parse(filepath,root))
+	if(reader.parse(fs,root))
 	{
 		for(int i=0;i<root["RGB Values"].size();i++)
 		{
-			value = root["RGB Values"][i][key].asString();
-			if(value != "")
+			value = root["RGB Values"][i]["color"].asString();
+			if(value != ""&&value==key)
 				return value;
 		}
 		return "KeyNotFound";
