@@ -1,19 +1,22 @@
 # wrapper-project
 CPP Wrappers
 
-To run jsoncpp code:  
+To run jsoncpp code
+(Ubuntu):  
 1) g++ test.cpp -ljsoncpp   
 2) ./a.out
 
-or just this = g++ test.cpp -ljsoncpp;./a.out
 
-To compile and create static libraries:  
+To compile and create static libraries
+(Ubuntu):  
 1) g++ -c -o testlib.o testlib.cpp  
 2) ar rcs testlib.a testlib.o  
 3) g++ testlibcode.cpp testlib.a -ljsoncpp
 4) ./a.out  
 
 DBLib:
-g++ -c -o DBLib.o DBLib.cpp;ar rcs DBLib.a DBLib.o;g++ trial.cpp DBLib.a -ljsoncpp;./a.out
+Ubuntu: g++ -c -o DBLib.o DBLib.cpp;ar rcs DBLib.a DBLib.o;g++ trial.cpp DBLib.a -ljsoncpp;./a.out
 
-reset = 0, black = 30, red = 31, green = 32, yellow = 33, blue = 34, magenta = 35, cyan = 36, and white = 37
+CPP ANSI colour formatting:
+std::cout<<"\033[<X>m -> Text <- \033[0m";
+X: reset = 0, black = 30, red = 31, green = 32, yellow = 33, blue = 34, magenta = 35, cyan = 36, white = 37

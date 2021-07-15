@@ -16,8 +16,8 @@ void DB::parse( std::string filepath )
 		return;
 	if(reader.parse(fs,root))
 	{
-		for(int i=0;i<root["RGB Values"].size();i++)
-			std::cout << root["RGB Values"][i]["color"].asString() << ":\t " << root["RGB Values"][i]["value"].asString() << std::endl;
+		for(int i=0;i<root["Root"].size();i++)
+			std::cout << root["Root"][i]["color"].asString() << ":\t " << root["Root"][i]["value"].asString() << std::endl;
 	}
 }
 
@@ -28,11 +28,11 @@ std::string DB::retrieve( std::string filepath, std::string key )
 		return "FileNotFound";
 	if(reader.parse(fs,root))
 	{
-		for(int i=0;i<root["RGB Values"].size();i++)
+		for(int i=0;i<root["Root"].size();i++)
 		{
-			if(key == root["RGB Values"][i]["color"].asString())
+			if(key == root["Root"][i]["color"].asString())
 			{
-				value = root["RGB Values"][i]["value"].asString();
+				value = root["Root"][i]["value"].asString();
 				return value;
 			}
 		}

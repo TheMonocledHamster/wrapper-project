@@ -1,0 +1,37 @@
+{
+	"Root":
+	[
+		{
+			"color": "black",
+			"value": "30"
+		},
+		{
+			"color": "red",
+			"value": "31"
+		},
+		{
+			"color": "green",
+			"value": "32"
+		},
+		{
+			"color": "blue",
+			"value": "34"
+		},
+		{
+			"color": "cyan",
+			"value": "36"
+		},
+		{
+			"color": "magenta",
+			"value": "35"
+		},
+		{
+			"color": "yellow",
+			"value": "33"
+		},
+		{
+			"color": "white",
+			"value": "37"
+		}
+	]
+}

@@ -1,9 +1,9 @@
 {
-	"RGB Values":
+	"Root":
 	[
 		{
-			"color": "white",
-			"value": "#ffffff"
+			"color": "black",
+			"value": "#000000"
 		},
 		{
 			"color": "red",
@@ -30,8 +30,8 @@
 			"value": "#ffff00"
 		},
 		{
-			"color": "black",
-			"value": "#000000"
+			"color": "white",
+			"value": "#ffffff"
 		}
 	]
 }

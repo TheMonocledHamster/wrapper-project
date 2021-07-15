@@ -13,11 +13,14 @@ int main()
     string key;
     cout << "Colour name: ";
     cin >> key;
+    string color = data.retrieve("ANSIcolorcodes.json",key);
+    if (color=="FileNotFound" || color=="ParseError" || color=="KeyNotFound")
+        color = "0";
     string out = data.retrieve("SixBitColours.json",key);
     if(out!="FileNotFound"){
         if(out!="ParseError"){
             if(out!="KeyNotFound"){
-                cout << "Hex code: " << "\x1B[31m"<< out << "\033[0m\t\t" << endl;
+                cout << "Hex code: " << "\033[" << (string)color << ";5m"<< out << "\033[0m" << endl;
             }
             else{
                 cout << "Key does not exist" << endl;
