@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 #include<fstream>
-#include <jsoncpp/json/json.h>
-#include <jsoncpp/json/value.h>
 #include "DBLib.hpp"
 
 using namespace std;
@@ -20,7 +18,7 @@ int main()
     if(out!="FileNotFound"){
         if(out!="ParseError"){
             if(out!="KeyNotFound"){
-                cout << "Hex code: " << "\033[" << (string)color << ";5m"<< out << "\033[0m" << endl;
+                cout << "Hex code: " << "\033[" << color << ";5m"<< out << "\033[0m" << endl;
             }
             else{
                 cout << "Key does not exist" << endl;
