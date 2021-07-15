@@ -4,6 +4,7 @@
 	#include <iostream>
 	#include <string>
 	#include <jsoncpp/json/json.h>
+	#include <jsoncpp/json/value.h>
 
 	class DB
 	{

@@ -14,10 +14,10 @@ void DB::parse( std::string filepath )
 	std::ifstream fs(filepath);
 	if(!fs)
 		return;
-	if(reader.parse(filepath,root))
+	if(reader.parse(fs,root))
 	{
 		for(int i=0;i<root["RGB Values"].size();i++)
-			std::cout << root["RGB Values"][i]["color"] << ":\t " << root["RGB Values"][i]["value"] << std::endl;
+			std::cout << root["RGB Values"][i]["color"].asString() << ":\t " << root["RGB Values"][i]["value"].asString() << std::endl;
 	}
 }
 

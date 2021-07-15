@@ -1,5 +1,8 @@
 #include <iostream>
 #include <string>
+#include<fstream>
+#include <jsoncpp/json/json.h>
+#include <jsoncpp/json/value.h>
 #include "DBLib.hpp"
 
 using namespace std;
@@ -7,6 +10,12 @@ using namespace std;
 int main()
 {
     DB data;
+    // ifstream f("SixBitColours.json");
+    // Json::Reader r;
+    // Json::Value v;
+    // r.parse(f,v);
+    // cout<<v<<endl;
+    data.parse("SixBitColours.json");
     string out = data.retrieve("SixBitColours.json","red");
     if(out!="FileNotFound"){
         if(out!="ParseError"){
