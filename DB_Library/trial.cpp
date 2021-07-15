@@ -11,12 +11,13 @@ int main()
 {
     DB data;
     string key;
+    cout << "Colour name: ";
     cin >> key;
     string out = data.retrieve("SixBitColours.json",key);
     if(out!="FileNotFound"){
         if(out!="ParseError"){
             if(out!="KeyNotFound"){
-                cout << "Hex code: " << out << endl;
+                cout << "Hex code: " << "\x1B[31m"<< out << "\033[0m\t\t" << endl;
             }
             else{
                 cout << "Key does not exist" << endl;
