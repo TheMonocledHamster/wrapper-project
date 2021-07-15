@@ -10,9 +10,7 @@ or just this = g++ test.cpp -ljsoncpp;./a.out
 To compile and create static libraries:  
 1) g++ -c -o testlib.o testlib.cpp  
 2) ar rcs testlib.a testlib.o  
-3) g++ testlibcode.cpp testlib.a  
+3) g++ testlibcode.cpp testlib.a -ljsoncpp
 4) ./a.out  
 
 or just this = g++ -c -o testlib.o testlib.cpp;ar rcs testlib.a testlib.o;g++ testlibcode.cpp testlib.a;./a.out
-
-a.out can run on any machine without having to install dependencies

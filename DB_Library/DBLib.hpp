@@ -3,21 +3,18 @@
 	#define LIBTEST_INCLUDED
 	#include <iostream>
 	#include <string>
-	#include <jsoncpp/json/reader.h>
-	#include <jsoncpp/json/writer.h>
-	#include <jsoncpp/json/value.h>
+	#include <jsoncpp/json/json.h>
 
-	template <typename T>
 	class DB
 	{
-		Json::Value value;
+		std::string value;
+		Json::Value root;
 		Json::Reader reader;
-		Json::Writer writer;
 	public:
-		DB ( std::string );
-		T retrieve(/*Fill in parameters*/);
-		void append(/*Fill in parameters*/);
-		~DB (void);
+		DB(void);
+		void parse( std::string filepath );
+		std::string retrieve( std::string filepath, std::string key );
+		~DB(void);
 	};
 
 #endif

@@ -1,37 +1,37 @@
 {
-	"RGB Values": 
+	"RGB Values":
 	[
 		{
 			"color": "white",
-			"value": "#fff"
+			"value": "#ffffff"
 		},
 		{
 			"color": "red",
-			"value": "#f00"
+			"value": "#ff0000"
 		},
 		{
 			"color": "green",
-			"value": "#0f0"
+			"value": "#00ff00"
 		},
 		{
 			"color": "blue",
-			"value": "#00f"
+			"value": "#0000ff"
 		},
 		{
 			"color": "cyan",
-			"value": "#0ff"
+			"value": "#00ffff"
 		},
 		{
 			"color": "magenta",
-			"value": "#f0f"
+			"value": "#ff00ff"
 		},
 		{
 			"color": "yellow",
-			"value": "#ff0"
+			"value": "#ffff00"
 		},
 		{
 			"color": "black",
-			"value": "#000"
+			"value": "#000000"
 		}
 	]
 }
