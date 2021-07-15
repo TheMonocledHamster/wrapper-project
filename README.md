@@ -13,4 +13,6 @@ To compile and create static libraries:
 3) g++ testlibcode.cpp testlib.a -ljsoncpp
 4) ./a.out  
 
-or just this = g++ -c -o testlib.o testlib.cpp;ar rcs testlib.a testlib.o;g++ testlibcode.cpp testlib.a;./a.out
+or just this = g++ -c -o testlib.o testlib.cpp;ar rcs testlib.a testlib.o;g++ testlibcode.cpp testlib.a -ljsoncpp;./a.out
+
+g++ -c -o DBLib.o DBLib.cpp;ar rcs DBLib.a DBLib.o;g++ trial.cpp DBLib.a -ljsoncpp;./a.out
