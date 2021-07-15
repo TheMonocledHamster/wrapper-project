@@ -10,13 +10,9 @@ using namespace std;
 int main()
 {
     DB data;
-    // ifstream f("SixBitColours.json");
-    // Json::Reader r;
-    // Json::Value v;
-    // r.parse(f,v);
-    // cout<<v<<endl;
-    //data.parse("SixBitColours.json");
-    string out = data.retrieve("SixBitColours.json","red");
+    string key;
+    cin >> key;
+    string out = data.retrieve("SixBitColours.json",key);
     if(out!="FileNotFound"){
         if(out!="ParseError"){
             if(out!="KeyNotFound"){
