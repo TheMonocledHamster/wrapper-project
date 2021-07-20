@@ -47,13 +47,13 @@ public:
 template <class D>
 void Derived<D>::read()
 {
-	cout << "Enter 'done' once all the colors are entered" << endl;
+	cout << "Enter 'end' once all the colors are entered" << endl;
 	int i = 0;
 	while (true)
 	{
 		cout << "color " << i++ << " : ";
 		cin >> key;
-		if (key == "done")
+		if (key == "end")
 			break;
 		get_colors.push_back(key);
 	}
