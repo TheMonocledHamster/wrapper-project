@@ -2,8 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <jsoncpp/json/reader.h>
-#include <jsoncpp/json/value.h>
+#include <json/json.h>
 
 DB::DB(void){}
 

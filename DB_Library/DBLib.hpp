@@ -3,8 +3,7 @@
 	#define LIBTEST_INCLUDED
 	#include <iostream>
 	#include <string>
-	#include <jsoncpp/json/json.h>
-	#include <jsoncpp/json/value.h>
+	#include <json/json.h>
 
 	class DB
 	{
