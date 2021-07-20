@@ -58,9 +58,9 @@ void Derived<D>::getColor()
 				if (out != "KeyNotFound")
 				{
 					cout << endl
-						 << "Color: " <<"\e[1;" << color << "m" << *it << "\e[0m" << endl
+						 << "Color: " <<"\033[1;" << color << "m" << *it << "\033[0m" << endl
 						 << "Hex code: "
-						 << "\e[1;" << color << "m" << out << "\e[0m" << endl;
+						 << "\033[1;" << color << "m" << out << "\033[0m" << endl;
 				}
 				else
 				{
