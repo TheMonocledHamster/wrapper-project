@@ -15,34 +15,25 @@ protected:
 	DB data;
 
 public:
-	Base()
-	{
-	}
-	virtual void fun()
-	{
-		cout << endl
-			 << "Cast Success" << endl;
-	}
-	virtual void fun(bool status)
-	{
-		cout << endl
-			 << "Cast Failed" << endl;
-	}
+	Base(void){}
+	virtual void entry()
+	{	cout << "Greetings" 
+			 << endl;	}
+	~Base(void){}
 };
 
 template <class D>
 class Derived : public Base<D>
 {
 public:
-	Derived()
-	{
-	}
+	Derived(void){}
 	string key;
 	vector<D> get_colors;
 	DB data;
 	void read();
 	void getColor();
 	void getAllColors();
+	~Derived(void){}
 };
 
 template <class D>
@@ -52,7 +43,7 @@ void Derived<D>::read()
 	int i = 0;
 	while (true)
 	{
-		cout << "color " << i++ << " : ";
+		cout << "Color " << i++ << ": ";
 		cin >> key;
 		if (key == "end")
 			break;
@@ -77,26 +68,30 @@ void Derived<D>::getColor()
 				{
 					cout << endl
 						 << "Color: "
-						 << "\033[1;" << color << "m" << *it << "\033[0m" << endl
+						 << "\033[1;" << color << "m" << *it << "\033[0m" 
+						 << endl
 						 << "Hex code: "
-						 << "\033[1;" << color << "m" << out << "\033[0m" << endl;
+						 << "\033[1;" << color << "m" << out << "\033[0m" 
+						 << endl;
 				}
 				else
 				{
-					cout << endl
-						 << "Key does not exist" << endl;
+					cerr << endl 
+						 << "Color: "
+						 << *it
+						 << endl
+						 << "Key does not exist" 
+						 << endl;
 				}
 			}
 			else
 			{
-				cout << endl
-					 << "Couldn't parse datafile, check formatting" << endl;
+				cerr << "Couldn't parse datafile, check formatting" << endl;
 			}
 		}
 		else
 		{
-			cout << endl
-				 << "File does not exist" << endl;
+			cerr << "File does not exist / Insufficient permissions" << endl;
 		}
 	}
 }
@@ -104,37 +99,61 @@ void Derived<D>::getColor()
 template <class D>
 void Derived<D>::getAllColors()
 {
-	cout << data.retrieve("SixBitColors.json");
-}
-
-int main()
-{
-	Base<string> *base = new Derived<string>;
-	Derived<string> *derived = dynamic_cast<Derived<string> *>(base);
-	if (derived)
+	string out = data.retrieve("SixBitColors.json");
+	if (out != "FileNotFound")
 	{
-		char fetch_type;
-		derived->fun();
-		cout << endl
-			 << "Enter A to specify the color"
-			 << endl
-			 << "Enter B to fetch all color codes"
-			 << endl;
-		cin >> fetch_type;
-		cout << endl;
-		if(fetch_type==65)
+		if (out != "ParseError")
 		{
-			derived->read();
-			derived->getColor();
+			cout << out;
 		}
-		else if(fetch_type==66)
+		else
 		{
-			derived->getAllColors();
+			cerr << "Couldn't parse datafile, check formatting" << endl;
 		}
 	}
 	else
 	{
-		derived->fun(false);
+		cerr << "File does not exist / Insufficient permissions" << endl;
 	}
+}
+
+int main()
+{
+	try
+	{
+		Base<string> *base = new Derived<string>;
+		Derived<string> *derived = dynamic_cast<Derived<string> *>(base);
+		if(derived)
+		{
+			derived->entry();
+			char fetch_type;
+			cout << endl
+					<< "Enter A to specify the color"
+					<< endl
+					<< "Enter B to fetch all color codes"
+					<< endl;
+			cin >> fetch_type;
+			cout << endl;
+			if(fetch_type==65)
+			{
+				derived->read();
+				derived->getColor();
+			}
+			else if(fetch_type==66)
+			{
+				derived->getAllColors();
+			}
+		}
+		else
+		{
+			throw derived;
+		}
+	}
+		
+	catch(const char* e)
+	{
+		cerr << "Casting failed" << '\n';
+	}
+
 	return 0;
 }
