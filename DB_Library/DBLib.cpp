@@ -18,7 +18,7 @@ std::string DB::retrieve(std::string filepath)
 	{
 		value = "";
 		for(int i=0;i<root["Root"].size();i++)
-			value = value + root["Root"][i]["color"].asString() + "\t\t" + root["Root"][i]["value"].asString() + "\n";
+			value = value + "\033[1;" + std::to_string(30+i) + "m" + root["Root"][i]["color"].asString() + "\t\t" + root["Root"][i]["value"].asString() + "\033[0m" + "\n";
 		return value;
 	}
 	else 
