@@ -11,7 +11,7 @@ To compile and create static libraries
 (Ubuntu):  
 1) g++ -c -o testlib.o testlib.cpp  
 2) ar rcs testlib.a testlib.o  
-3) g++ testlibcode.cpp testlib.a -ljsoncpp
+3) g++ testcode.cpp testlib.a -ljsoncpp
 4) ./a.out  
 
 DBLib:
