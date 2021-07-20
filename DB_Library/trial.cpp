@@ -11,12 +11,12 @@ int main()
 	vector<string> get_colors{};
 	DB data;
 	string key;
-	cout << "Enter 'done' once all the colors are entered" << endl;
+	cout << "Enter 'end' once all the colors are entered" << endl;
 	while(true)
 	{
 		cout << "color name: ";
 		cin >> key;
-		if(key=="done")
+		if(key=="end")
 			break;
 		get_colors.push_back(key);
 	}
