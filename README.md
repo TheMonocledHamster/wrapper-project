@@ -8,6 +8,7 @@ To run jsoncpp code
 
 
 To compile and create static libraries  
+
 (Ubuntu):  
 1) g++ -c -o testlib.o testlib.cpp  
 2) ar rcs testlib.a testlib.o  
