@@ -7,14 +7,14 @@ To run jsoncpp code
 2) ./a.out
 
 
-To compile and create static libraries
+To compile and create static libraries  
 (Ubuntu):  
 1) g++ -c -o testlib.o testlib.cpp  
 2) ar rcs testlib.a testlib.o  
 3) g++ testcode.cpp testlib.a -ljsoncpp
 4) ./a.out  
 
-DBLib:
+DBLib:  
 Ubuntu: g++ -c -o DBLib.o DBLib.cpp;ar rcs DBLib.a DBLib.o;g++ trial.cpp DBLib.a -ljsoncpp;./a.out
 
 CPP ANSI colour formatting:
