@@ -21,12 +21,12 @@ public:
 	virtual void fun()
 	{
 		cout << endl
-			 << "Cast success" << endl;
+			 << "Cast Success" << endl;
 	}
 	virtual void fun(bool status)
 	{
 		cout << endl
-			 << "Cast failed" << endl;
+			 << "Cast Failed" << endl;
 	}
 };
 
@@ -42,6 +42,7 @@ public:
 	DB data;
 	void read();
 	void getColor();
+	void getAllColors();
 };
 
 template <class D>
@@ -100,15 +101,36 @@ void Derived<D>::getColor()
 	}
 }
 
+template <class D>
+void Derived<D>::getAllColors()
+{
+	cout << data.retrieve("SixBitColors.json");
+}
+
 int main()
 {
 	Base<string> *base = new Derived<string>;
 	Derived<string> *derived = dynamic_cast<Derived<string> *>(base);
 	if (derived)
 	{
+		char fetch_type;
 		derived->fun();
-		derived->read();
-		derived->getColor();
+		cout << endl
+			 << "Enter A to specify the color"
+			 << endl
+			 << "Enter B to fetch all color codes"
+			 << endl;
+		cin >> fetch_type;
+		cout << endl;
+		if(fetch_type==65)
+		{
+			derived->read();
+			derived->getColor();
+		}
+		else if(fetch_type==66)
+		{
+			derived->getAllColors();
+		}
 	}
 	else
 	{

@@ -9,19 +9,23 @@ DB::DB(void){}
 
 DB::~DB(void){}
 
-void DB::parse( std::string filepath )
+std::string DB::retrieve(std::string filepath)
 {
 	std::ifstream fs(filepath);
 	if(!fs)
-		return;
+		return "FileNotFound";
 	if(reader.parse(fs,root))
 	{
+		value = "";
 		for(int i=0;i<root["Root"].size();i++)
-			std::cout << root["Root"][i]["color"].asString() << ":\t " << root["Root"][i]["value"].asString() << std::endl;
+			value = value + root["Root"][i]["color"].asString() + "\t\t" + root["Root"][i]["value"].asString() + "\n";
+		return value;
 	}
+	else 
+		return "ParseError";
 }
 
-std::string DB::retrieve( std::string filepath, std::string key )
+std::string DB::retrieve(std::string filepath, std::string key)
 {
 	std::ifstream fs(filepath);
 	if(!fs)
