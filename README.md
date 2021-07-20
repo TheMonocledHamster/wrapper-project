@@ -1,12 +1,6 @@
 # wrapper-project
 CPP Wrappers
 
-To run jsoncpp code
-(Ubuntu):  
-1) g++ test.cpp -ljsoncpp   
-2) ./a.out
-
-
 To compile and create static libraries  
 
 (Ubuntu):  
