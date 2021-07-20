@@ -14,20 +14,20 @@
 			"value": "#00ff00"
 		},
 		{
-			"color": "blue",
-			"value": "#0000ff"
+			"color": "yellow",
+			"value": "#ffff00"
 		},
 		{
-			"color": "cyan",
-			"value": "#00ffff"
+			"color": "blue",
+			"value": "#0000ff"
 		},
 		{
 			"color": "magenta",
 			"value": "#ff00ff"
 		},
 		{
-			"color": "yellow",
-			"value": "#ffff00"
+			"color": "cyan",
+			"value": "#00ffff"
 		},
 		{
 			"color": "white",

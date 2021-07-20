@@ -13,8 +13,8 @@
 		Json::Reader reader;
 	public:
 		DB(void);
-		void parse( std::string filepath );
-		std::string retrieve( std::string filepath, std::string key );
+		std::string retrieve(std::string filepath);
+		std::string retrieve(std::string filepath, std::string key);
 		~DB(void);
 	};
 
