@@ -1,43 +1,49 @@
 #include <iostream>
 #include <string>
-#include <fstream>
+#include<fstream>
+#include <vector>
 #include "DBLib.hpp"
 
 using namespace std;
 
 int main()
 {
-    DB data;
-    string key;
-    cout << "Colour name: ";
-    cin >> key;
-    string color = data.retrieve("ANSIcolorcodes.json", key);
-    if (color == "FileNotFound" || color == "ParseError" || color == "KeyNotFound")
-        color = "0";
-    string out = data.retrieve("SixBitColours.json", key);
-    if (out != "FileNotFound")
-    {
-        if (out != "ParseError")
-        {
-            if (out != "KeyNotFound")
-            {
-                cout << "Hex code: "
+	vector<string> get_colors{};
+	DB data;
+	string key;
+	cout << "Enter 'done' once all the colors are entered" << endl;
+	while(true)
+	{
+		cout << "color name: ";
+		cin >> key;
+		if(key=="done")
+			break;
+		get_colors.push_back(key);
+	}
+	
+	for(auto it = get_colors.begin(); it != get_colors.end(); ++it)
+	{
+	string color = data.retrieve("ANSIcolorcodes.json",*it);
+	if (color=="FileNotFound" || color=="ParseError" || color=="KeyNotFound")
+		color = "0";
+	string out = data.retrieve("SixBitColors.json",*it);
+	if(out!="FileNotFound"){
+		if(out!="ParseError"){
+			if(out!="KeyNotFound"){
+				cout<<endl << "Color: " << *it << endl << "Hex code: "
                      << "\e[1;" << color << "m" << out << "\e[0m" << endl;
-            }
-            else
-            {
-                cout << "Key does not exist" << endl;
-            }
-        }
-        else
-        {
-            cout << "Couldn't parse datafile, check formatting" << endl;
-        }
-    }
-    else
-    {
-        cout << "File does not exist" << endl;
-    }
-
-    return 0;
+			}
+			else{
+				cout << "Key does not exist" << endl;
+			}
+		}
+		else{
+			cout << "Couldn't parse datafile, check formatting" << endl;
+		}
+	}
+	else{
+		cout << "File does not exist" << endl;
+	}
+	}
+	return 0;
 }
