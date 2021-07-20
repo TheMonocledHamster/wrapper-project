@@ -31,7 +31,7 @@ int main()
 		if(out!="ParseError"){
 			if(out!="KeyNotFound"){
 				cout<<endl << "Color: " << *it << endl << "Hex code: "
-                     << "\e[1;" << color << "m" << out << "\e[0m" << endl;
+                     << "\033[1;" << color << "m" << out << "\033[0m" << endl;
 			}
 			else{
 				cout << "Key does not exist" << endl;
