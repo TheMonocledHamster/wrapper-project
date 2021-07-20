@@ -30,8 +30,7 @@ int main()
 	if(out!="FileNotFound"){
 		if(out!="ParseError"){
 			if(out!="KeyNotFound"){
-				cout<<endl << "Color: " << *it << endl << "Hex code: "
-                     << "\033[1;" << color << "m" << out << "\033[0m" << endl;
+				cout<<endl << "Color: " << *it << endl << "Hex code: " << "\033[1;" << color << "m" << out << "\033[0m" << endl;
 			}
 			else{
 				cout << "Key does not exist" << endl;
