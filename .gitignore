@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+DBexe
 
 # VS Code Customization
 settings.json
