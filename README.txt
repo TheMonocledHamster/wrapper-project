@@ -47,7 +47,7 @@ Recommended:
   Execution:
     1. Create Object File:			g++ -c -o DBLib.o DBLib.cpp
     2. Create Static Library:			ar rcs DBLib.a DBLib.o
-    3. Compile Program:				g++ trial.cpp DBLib.a -ljsoncpp
-    4. Execute Program:				./a.out
+    3. Compile Program:				g++ -o DBexe trial.cpp DBLib.a -ljsoncpp
+    4. Execute Program:				./DBexe
 
 GitHub Repository: https://github.com/Emperor-Adi/wrapper-project
