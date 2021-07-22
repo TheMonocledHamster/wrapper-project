@@ -44,7 +44,7 @@ Compatibility:
 Recommended:
   Ubuntu 20.04, C++11, G++9.3
   Execution:
-    1. Create Object Files:			g++ -c -o DBLib.o DBLib.cpp
+    1. Create Object File:			g++ -c -o DBLib.o DBLib.cpp
     2. Create Static Library:			ar rcs DBLib.a DBLib.o
     3. Compile Program:				g++ trial.cpp DBLib.a -ljsoncpp
     4. Execute Program:				./a.out
