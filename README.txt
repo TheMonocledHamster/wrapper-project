@@ -21,7 +21,10 @@ Concepts implemented:
 
 Project Dependencies:
   JsonCPP 1.8.1 (Open Source) - https://github.com/open-source-parsers/jsoncpp
-  On Debian-based distros: sudo apt-get install libjsoncpp-dev
+  Debian-based distros: sudo apt-get install libjsoncpp-dev
+  Arch-based distros: sudo pacman -S jsoncpp
+  MacOS: brew install jsoncpp
+  RedHat-based distros: sudo dnf -y install epel-release;sudo dnf -y install jsoncpp
 
 Compatibility:
   Architecture:
@@ -31,6 +34,7 @@ Compatibility:
     Debian-based Linux Distros (Ubuntu, Debian, Mint, etc)
     Arch-based Distros (Arch, Manjaro, Garuda, etc)
     RedHat Family (RHEL, CentOS, Fedora)
+    MacOS
     FreeBSD
   C++ Versions:
     C++ 11
