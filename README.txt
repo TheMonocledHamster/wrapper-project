@@ -28,7 +28,7 @@ Compatibility:
     x64
   Operating Systems:
     Debian-based Linux Distros (Ubuntu, Debian, Mint, etc)
-    Arch-based Distros (Arch, Manjaro, Garuda, SteamOS, etc)
+    Arch-based Distros (Arch, Manjaro, Garuda, etc)
     RedHat Family (RHEL, CentOS, Fedora)
     FreeBSD
   C++ Versions:
