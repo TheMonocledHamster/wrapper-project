@@ -21,6 +21,7 @@ Concepts implemented:
 
 Project Dependencies:
   JsonCPP 1.8.1 (Open Source) - https://github.com/open-source-parsers/jsoncpp
+  On Debian-based distros: sudo apt-get install libjsoncpp-dev
 
 Compatibility:
   Architecture:
