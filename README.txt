@@ -54,5 +54,3 @@ Recommended:
     3. Compile Program:				g++ -o DBexe trial.cpp DBLib.a -ljsoncpp
     4. Execute Program:				./DBexe
   Alternatively, run "compile.sh"
-
-GitHub Repository: https://github.com/Emperor-Adi/wrapper-project
